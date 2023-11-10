@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contour plots</title>
+    <style>
+        .m{
+    text-align: center;
+    }
+    h3{
+    text-align: center;
+    }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('4.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+        </style>
+</head>
+<body>
+      
+    <h1 class="m"><u>CONTOUR PLOTS</u></h1>
+    
+    <h4 style="color:#00ff00;">WHAT IS CONTOUR PLOTS</h4>
+    <ul>
+        <li>A <a style="color: #1a75ff ;" target="_blank" href="https://www.bing.com/search?q=Contour+plots+mean&form=ANNTH1&refig=901ded2c39b64b05bc19c8ada7d42bf4&pc=NMTS">contour plot </a> is a graphical method to visualize the <a style="color:  #1a75ff;"
+    target="_blank" href="https://www.bing.com/search?q=3-D+surface++meaning&qs=n&form=QBRE&sp=-1&lq=0&pq=&sc=0-0&sk=&cvid=E534FFCB3FFF4686B292AC4A0ECF045D&ghsh=0&ghacc=0&ghpl=">3-D surface</a> by plotting constant Z slices called contours in a <a style="color:  #1a75ff;" target="_blank" href="https://www.bing.com/search?q=2-D+format+mean&form=ANNTH1&refig=2ee85fd7236e47209800f0f949d7004e&pc=NMTS">2-D format</a></li> <li> The contour plot is an alternative to a 3-D surface plot. </li>
+    </ul>
+    <h4 style="color: #00ff00;">THE CONTOUR PLOT IF FORMED BY</h4>
+        <ul>
+    <li>Vertical axis: Independent variable 2</li>
+    <li>Horizontal axis: Independent variable 1</li>
+    <li>Lines: iso-response values, can be calculated with the help(x,y).</li> 
+    </ul>
+
+    <h4 style="color:#00ff00;">CONTOUR PLOTS USING MATHPLOTLIB-PYTHON</h4>
+    <ul>
+        <li>Contour plots also called level plots are a tool for doing multivariate analysis and visualizing 3-D plots in 2-D space.</li>
+        <li> If we consider X and Y as our variables we want to plot then the response Z will be plotted as slices on the X-Y plane due to which contours are sometimes referred as Z-slices or iso-response.</li>
+        <li>Contour plots are widely used to visualize density, altitudes or heights of the mountain as well as in the meteorological department.</li> <li>Due to such wide usage matplotlib.pyplot provides a method contour to make it easy for us to draw contour plots.</li>
+    </ul>
+
+        <h4 style="color:#00ff00;">WHAT IS PYPLOT MATHPLOTLIB</h4>
+        <ul>
+            <li>Pyplot is a <a style="color: #1a75ff;" target="_blank" href="https://www.bing.com/search?q=WHAT+is+mathplotlib&qs=n&form=QBRE&sp=-1&ghc=1&lq=0&pq=what+is+mathplotlib&sc=10-19&sk=&cvid=B68655226A2B4F92B7B8407630AC3F8B&ghsh=0&ghacc=0&ghpl=">Matplotlib</a> module that provides a MATLAB-like interface. Matplotlib is designed to be as usable as MATLAB, with the ability to use Python and the advantage of being free and open-source.</li>
+            <li> Each pyplot function makes some changes to a figure.
+            </li>
+        </ul>
+
+             <h5 style="color:#b30000;"><u>e.g.</u></h5>
+             <ul>
+                <li> creates a figure, creates a plotting area in a figure, plots some lines in a plotting area, decorates the plot with labels, etc.</li> 
+                <li>The various plots we can utilize using Pyplot are <a style="color: #66a3ff;" target="_blank" href="https://www.geeksforgeeks.org/line-chart-in-matplotlib-python/">Line Plot</a> ,<a style="color: #66a3ff;" target="_blank" href="https://www.geeksforgeeks.org/plotting-histogram-in-python-using-matplotlib/">Histogram</a> , <a style="color: #66a3ff;" target="_blank" href="https://www.geeksforgeeks.org/matplotlib-pyplot-scatter-in-python/">Scatter</a> , <a style="color: #66a3ff;" target="_blank" href="https://www.bing.com/search?q=what+is+3D+Plot+&form=ANNTH1&refig=5a0163016baf48ee94dc0095b608f7f2&pc=NMTS"> 3D Plot</a>, Image, Contour, and Polar.</li>
+            </ul>
+
+                <h4 style="color: #00ff00;">TYPES OF CONTOUR PLOT:</h4>
+                <ol>
+                    <li><h4 style="color: #990073;">RECTANGULAR CONTOUR PLOT</h4></li>
+                    <ul>
+                        <li>projection of 2D-plot in 2D-rectangular canvas.</li> 
+                        <li> It is the most common form of the contour plot.</li>
+                    </ul>
+                    <h4 style="color: #ff8000;">IMPLEMENTATIONS:</h4>
+                    <h5># imports</h5> 
+                    <h5>import numpy as np</h5> 
+                    <h5>import matplotlib.pyplot as plt</h5>  
+                    <h5># define a function </h5>
+                    <h5>def func(x, y): </h5>
+                    <h5>    return np.sin(x) ** 2 +  np.cos(y) **2</h5>
+                    <h5># generate 50 values b/w 0 a5 </h5>
+                    <h5>x = np.linspace(0, 5, 50) </h5>
+                    <h5>y = np.linspace(0, 5, 50) </h5>
+                    <h5># Generate combination of grids</h5> 
+                    <h5>X, Y = np.meshgrid(x, y) </h5>
+                    <h5>Z = func(X, Y) </h5>
+                    <h5># Draw rectangular contour plot </h5>
+                    <h5>plt.contour(X, Y, Z, cmap='gist_rainbow_r');</h5>
+                        <h4><u>OUTPUT:</u></h4>
+                        <img src="rectangularcontour.png" alt="Lording">
+                <li><h4 style="color: #990073;">POLAR CONTOUR PLOT</h4></li>
+                <ul>
+                    <li>Polar contour plot is plotted by using the polar coordinates r and theta.</li>
+                    <li> The response variable here is the collection of values generated while passing r and theta into the given function, where r is the distance from origin and theta is the angle from the positive x axis.</li>
+                </ul>
+                <h4 style="color: #ff8000;">IMPLEMENTATIONS:</h4>
+                <h5> # generate r and theta arrays </h5>
+                <h5>rad_arr = np.radians(np.linspace(0, 360, 20))</h5> 
+                <h5>r_arr = np.arange(0, 1, .1) </h5>
+                <h5># define function </h5>
+                <h5>def func(r, theta): </h5>
+                <h5>  return r * np.sin(theta)</h5> 
+                <h5>r, theta = np.meshgrid(r_arr, rad_arr)</h5> 
+                <h5># get the values of response variables </h5>
+                <h5>values = func(r,theta) </h5>
+                <h5># plot the polar coordinates</h5> 
+                    <h5>fig, ax = plt.subplots(subplot_kw=dict</h5><h5></h5>(projection='polar'))</h5> 
+                    <h5>ax.contourf(theta, r, values, cmap='Spectral_r')</h5> 
+                    <h5>plt.show()</h5>
+                    <h5><u>OUTPUT:</u></h5>
+                    <img src="polarcontour.png" alt="Lording">
+                 
+                    <li><h4 style="color: #990073;">POLAR CONTOUR PLOT</h4></li>
+                <ul>
+                    <li> Ternary contour plot is used to represent the relationship between 3 explanatory variables and the response variable in the form of a filled triangle.</li>
+                        <li>Matplotlib does not provide a definitive API for plotting Ternary Contour plot, however, there are many other package which does that. </li> <li>IN this example, we will be using Plotly library.</li>
+                </ul>
+                <h4 style="color: #ff8000;">IMPLEMENTATIONS:</h4>
+                <h4>
+                    # install & import plotly </h4> 
+                    <h4>! pip install plotly </h4>
+                    <h4>import plotly.figure_factory as ff</h4> 
+                    <h4># Define variables </h4>
+                    <h4>a = np.array([0. , 0. , 0., 0., 1./3, 1./3, 1./3, 2./3, 2./3, 1.])</h4>
+                    <h4>b = np.array([0., 1./3, 2./3, 1., 0., 1./3, 2./3, 0., 1./3, 0.])</h4>
+                    <h4>c = 1 - a - b </h4>
+                    <h4># Define function that generates response variable</h4> 
+                    <h4>func = (a - 0.02) * b * (a - 0.5) * (b - 0.4) * (c - 1)**2</h4>
+                    <h4># plot ternary contour </h4>
+                    <h4>fig = ff.create_ternary_contour(np.array([a, b, c]), func,pole_labels=['a', 'b', 'c'],</h4>interp_mode='cartesian',colorscale='Viridis',)</h4> 
+                    <h4>fig.show() </h4>
+                <h4><u>OUTPUT:</u></h4>
+                <img width="500px"  src="c:\visual stdio\HOD PROJECT\ternarycontour.png" alt="Lording">
+                 </ol>
+                 <center>
+                 <table border="2" >
+                    <tr>
+                        <td>
+                            <img  class="pi" width="200px" src="18258.jpg" alt="mass">
+                        </td>
+                    </tr>
+                 </table>
+                </center>
+                 <h3>Name: Mukesh.D</h3>
+                 <h3><img width="15px" src="1.png" alt="Lording">    Contact: 9345771560</h3>
+                 <h3> <img width="20px" src="4.jpg" alt="Lording"> Mail: <a style="color:#ff8c1a;" href="https://mail.google.com/mail/u/0/?login">mathiarasu107@gmail.com</a></h3>
+                 <h3> <img width="30px" src="OIP.jpeg" alt="Lording">  Github: <a target="_blank" href="https://github.com/">Mathiarasu1025</a></h3>
+                 
+</body>
+</html>
